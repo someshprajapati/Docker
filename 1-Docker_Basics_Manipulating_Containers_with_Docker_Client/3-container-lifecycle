@@ -1,0 +1,145 @@
+# Create the hello-world image
+S😎MESH~[Docker (master)]-$ docker create hello-world
+b445d66f9b6ca121fa74ba4304cd848048200b6a176073f35019b02a54509141
+
+
+# Start the hello-world image
+S😎MESH~[Docker (master)]-$ docker start b445d66f9b6ca121fa74ba4304cd848048200b6a176073f35019b02a54509141
+b445d66f9b6ca121fa74ba4304cd848048200b6a176073f35019b02a54509141
+
+
+# Start the hello-world image with -a
+# -a is used to attach the container
+S😎MESH~[Docker (master)]-$ docker start -a b445d66f9b6ca121fa74ba4304cd848048200b6a176073f35019b02a54509141
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+
+
+# Run the busybox container with echo commands
+S😎MESH~[Docker (master)]-$ docker run busybox echo Hi there
+Hi there
+
+# Check all the stopped and running containers
+S😎MESH~[Docker (master)]-$ docker ps -all
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+176e7add7e1c        busybox             "echo Hi there"     4 seconds ago       Exited (0) 3 seconds ago                       flamboyant_galois
+
+# Start the stopped busybox container
+S😎MESH~[Docker (master)]-$ docker start 176e7add7e1c
+176e7add7e1c
+
+# Start the stopped busybox container to check output
+S😎MESH~[Docker (master)]-$ docker start -a 176e7add7e1c
+Hi there
+
+# Start the stopped busybox container
+S😎MESH~[Docker (master)]-$ docker start -a 176e7add7e1c echo Bye there
+you cannot start and attach multiple containers at once
+
+# Check all the stopped and running containers
+S😎MESH~[Docker (master)]-$ docker ps -all
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+176e7add7e1c        busybox             "echo Hi there"     2 minutes ago       Exited (0) 2 minutes ago                       flamboyant_galois
+
+# Remove all the stopped containers
+S😎MESH~[Docker (master)]-$ docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+176e7add7e1c94d40c0bc77faf87a530225645e26a2b0b0e3271e91fb5bb5577
+b445d66f9b6ca121fa74ba4304cd848048200b6a176073f35019b02a54509141
+0c0c78d91a29d80ece7b887053fbdf601200e19f2fc97ab0745fe6a635d48062
+09d89307a43558f53b39ebaf615c81e7ac314612047781f84c1dc4d705ccbbd5
+2dd6d1e9eecdc1bb9c394ec6a7c259c2a8cbcfd9ba909f00669e2de0cd7fb12c
+e31c3a886bebddc272712f5461134474a530b6667d8bb6b5b80e279fd7bc3d3f
+833c2740faa139a41a5adc7fa9c25f5b4165390ac51acdd23089880d8e118457
+
+Total reclaimed space: 0B
+
+
+# Check all the stopped containers
+S😎MESH~[Docker (master)]-$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+# Create the busybox container
+S😎MESH~[Docker (master)]-$ docker create busybox echo Hi Somesh
+22b7996cf6ee78f539fcb48a4a57cd244e86efda63a72531b452f40b9b349c22
+
+# Start the busybox container
+S😎MESH~[Docker (master)]-$ docker start 22b7996cf6ee78f539fcb48a4a57cd244e86efda63a72531b452f40b9b349c22
+22b7996cf6ee78f539fcb48a4a57cd244e86efda63a72531b452f40b9b349c22
+
+# Start the busybox container
+S😎MESH~[Docker (master)]-$ docker start -a 22b7996cf6ee78f539fcb48a4a57cd244e86efda63a72531b452f40b9b349c22
+Hi Somesh
+
+# Get the Logs from the busybox container
+S😎MESH~[Docker (master)]-$ docker logs 22b7996cf6ee78f539fcb48a4a57cd244e86efda63a72531b452f40b9b349c22
+Hi Somesh
+Hi Somesh
+
+
+# Create the busybox container
+S😎MESH~[Docker (master)]-$ docker create busybox ping google.com
+4b2fb90310e3984be36859dabac42fbac93b248740ae458c090070012d9fb193
+
+# Start the busybox container
+S😎MESH~[Docker (master)]-$ docker start 4b2fb90310e3984be36859dabac42fbac93b248740ae458c090070012d9fb193
+4b2fb90310e3984be36859dabac42fbac93b248740ae458c090070012d9fb193
+
+# Get the logs from the busybox container
+S😎MESH~[Docker (master)]-$ docker logs 4b2fb90310e3984be36859dabac42fbac93b248740ae458c090070012d9fb193
+PING google.com (172.217.163.46): 56 data bytes
+64 bytes from 172.217.163.46: seq=0 ttl=37 time=44.846 ms
+64 bytes from 172.217.163.46: seq=1 ttl=37 time=50.450 ms
+64 bytes from 172.217.163.46: seq=2 ttl=37 time=50.110 ms
+64 bytes from 172.217.163.46: seq=3 ttl=37 time=50.216 ms
+
+# Check all the stopped containers
+S😎MESH~[Docker (master)]-$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+4b2fb90310e3        busybox             "ping google.com"   3 minutes ago       Up 3 minutes                            vigilant_gagarin
+
+# Stop the busybox container 
+# It will send the SIGTERM signal before stop and take little time
+S😎MESH~[Docker (master)]-$ docker stop 4b2fb90310e3
+4b2fb90310e3
+
+S😎MESH~[Docker (master)]-$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+# Start the busybox container again
+S😎MESH~[Docker (master)]-$ docker start 4b2fb90310e3
+4b2fb90310e3
+
+# Kill the busybox container
+# It will send the SIGKILL signal and stop immediately
+S😎MESH~[Docker (master)]-$ docker kill 4b2fb90310e3
+4b2fb90310e3
+
+S😎MESH~[Docker (master)]-$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES

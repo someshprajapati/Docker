@@ -1,0 +1,38 @@
+# Run the redis container
+S😎MESH~[Docker (master)]-$ docker run redis
+1:C 05 Jul 2020 10:34:21.499 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 05 Jul 2020 10:34:21.500 # Redis version=6.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 05 Jul 2020 10:34:21.500 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 05 Jul 2020 10:34:21.502 * Running mode=standalone, port=6379.
+1:M 05 Jul 2020 10:34:21.503 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+1:M 05 Jul 2020 10:34:21.503 # Server initialized
+1:M 05 Jul 2020 10:34:21.503 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 05 Jul 2020 10:34:21.504 * Ready to accept connections
+
+# Open another terminal to check the container id
+# Check the running container
+S😎MESH~[someshprajapati]-$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+4185f6b42704        redis               "docker-entrypoint.s…"   20 seconds ago      Up 20 seconds       6379/tcp            hardcore_perlman
+
+# Run the redis-cli to connect to redis container
+S😎MESH~[someshprajapati]-$ docker exec -it 4185f6b42704 redis-cli
+127.0.0.1:6379> set myname Somesh
+OK
+127.0.0.1:6379> get myname
+"Somesh"
+127.0.0.1:6379>
+
+# Run container with shell
+S😎MESH~[Docker (master)]-$ docker run -it busybox sh
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+/ # ping google.com
+PING google.com (172.217.163.46): 56 data bytes
+64 bytes from 172.217.163.46: seq=0 ttl=37 time=44.540 ms
+64 bytes from 172.217.163.46: seq=1 ttl=37 time=50.854 ms
+^C
+--- google.com ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 44.540/47.697/50.854 ms
+/ #
