@@ -67,7 +67,7 @@ Successfully tagged somesh/redis-image:latest
 ```
 
 ## Check the containers
-😎MESH~[redis-image (master)]-$ **docker ps -all**
+S😎MESH~[redis-image (master)]-$ **docker ps -all**
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                      PORTS               NAMES
 1c7583d98acd        843ce5b95574        "redis-server"      About a minute ago   Exited (0) 45 seconds ago                       optimistic_hugle
