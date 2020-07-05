@@ -65,9 +65,10 @@ Starting visit-counts_node-app_1     ... done
 ```
 
 ## Check the running container again
-## two containers are running with name: 
+## Two containers are running with name: 
 1. visit-counts_node-app
 2. redis
+
 S😎MESH~[visit-counts (master)]-$ **docker ps**
 ```
 CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                    NAMES
@@ -104,8 +105,7 @@ total 96
 ```
 
 ## Check the container status running with docker-compose 
-#### Make sure docker-compose ps command should run inside 
-#### the directory where the docker-compose.yml exist
+#### Make sure docker-compose ps command should run inside the directory where the docker-compose.yml exist
 #### Otherwise get the ERROR
 S😎MESH~[visit-counts (master)]-$ **docker-compose ps**
 ```
@@ -122,8 +122,7 @@ Creating visit-counts_redis-server_1 ... done
 ```
 
 ## Check the container status running with docker-compose 
-#### Make sure docker-compose ps command should run inside 
-#### the directory where the docker-compose.yml exist
+#### Make sure docker-compose ps command should run inside the directory where the docker-compose.yml exist
 #### Otherwise get the ERROR
 S😎MESH~[visit-counts (master)]-$ **docker-compose ps**
 ```
@@ -133,7 +132,7 @@ visit-counts_node-app_1       docker-entrypoint.sh npm start   Up      0.0.0.0:4
 visit-counts_redis-server_1   docker-entrypoint.sh redis ...   Up      6379/tcp
 ```
 
-## Try the same command outside the directory
+### Try the same command outside the directory
 S😎MESH~[visit-counts (master)]-$ **cd ..**
 ```
 S😎MESH~[4-Visitor-Count-App-using-Docker-Compose (master)]-$ docker-compose ps
