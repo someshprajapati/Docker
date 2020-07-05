@@ -1,6 +1,12 @@
-# Use the docker-compose command to run the container using docker-compose file
+# Make the small webapp which can count the web visitors using Node and Redis
+## Using the docker-compose to run 2 containers: 
+1. Node App
+2. Redis-server
 
-S😎MESH~[visit-counts (master)]-$ **  docker-compose up ** 
+
+## Use the docker-compose command to run the container using docker-compose file
+
+S😎MESH~[visit-counts (master)]-$ **docker-compose up** 
 ```
 Creating network "visit-counts_default" with the default driver
 Building node-app
@@ -45,30 +51,32 @@ Stopping visit-counts_node-app_1     ... done
 Stopping visit-counts_redis-server_1 ... done
 ```
 
-# Check the running container
-S😎MESH~[visit-counts (master)]-$ ** docker ps **
+## Check the running container
+S😎MESH~[visit-counts (master)]-$ **docker ps**
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
-# Run the containers in background using the docker-compose command
-S😎MESH~[visit-counts (master)]-$ ** docker-compose up -d **
+## Run the containers in background using the docker-compose command
+S😎MESH~[visit-counts (master)]-$ **docker-compose up -d**
 ```
 Starting visit-counts_redis-server_1 ... done
 Starting visit-counts_node-app_1     ... done
 ```
 
-# Check the running container again
-# two containers are running with name: visit-counts_node-app and redis
-S😎MESH~[visit-counts (master)]-$ ** docker ps **
+## Check the running container again
+## two containers are running with name: 
+1. visit-counts_node-app
+2. redis
+S😎MESH~[visit-counts (master)]-$ **docker ps**
 ```
 CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                    NAMES
 d9f896fa7ef9        visit-counts_node-app   "docker-entrypoint.s…"   20 minutes ago      Up 3 seconds        0.0.0.0:4080->8085/tcp   visit-counts_node-app_1
 98622d904b8c        redis                   "docker-entrypoint.s…"   20 minutes ago      Up 3 seconds        6379/tcp                 visit-counts_redis-server_1
 ```
 
-# Putting the running container down using the docker-compose command
-S😎MESH~[visit-counts (master)]-$ ** docker-compose down **
+## Putting the running container down using the docker-compose command
+S😎MESH~[visit-counts (master)]-$ **docker-compose down**
 ```
 Stopping visit-counts_node-app_1     ... done
 Stopping visit-counts_redis-server_1 ... done
@@ -77,14 +85,14 @@ Removing visit-counts_redis-server_1 ... done
 Removing network visit-counts_default
 ```
 
-# Check the running container again
-S😎MESH~[visit-counts (master)]-$ ** docker ps **
+## Check the running container again
+S😎MESH~[visit-counts (master)]-$ **docker ps**
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
-# Listing directory
-S😎MESH~[visit-counts (master)]-$ ** ls -l **
+## Listing directory
+S😎MESH~[visit-counts (master)]-$ **ls -l**
 ```
 total 96
 -rw-rw-r--@ 1 someshprajapati  staff    202 Jul  5 19:43 Dockerfile
@@ -95,29 +103,29 @@ total 96
 -rw-r--r--@ 1 someshprajapati  staff  27129 Jul  5 20:00 visit_counts.png
 ```
 
-# Check the container status running with docker-compose 
-# Make sure docker-compose ps command should run inside 
-# the directory where the docker-compose.yml exist
-# Otherwise get the ERROR
-S😎MESH~[visit-counts (master)]-$ ** docker-compose ps **
+## Check the container status running with docker-compose 
+#### Make sure docker-compose ps command should run inside 
+#### the directory where the docker-compose.yml exist
+#### Otherwise get the ERROR
+S😎MESH~[visit-counts (master)]-$ **docker-compose ps**
 ```
 Name   Command   State   Ports
 ------------------------------
 ```
 
-# Run the containers in background using the docker-compose command
-S😎MESH~[visit-counts (master)]-$ ** docker-compose up -d **
+## Run the containers in background using the docker-compose command
+S😎MESH~[visit-counts (master)]-$ **docker-compose up -d**
 ```
 Creating network "visit-counts_default" with the default driver
 Creating visit-counts_node-app_1     ... done
 Creating visit-counts_redis-server_1 ... done
 ```
 
-# Check the container status running with docker-compose 
-# Make sure docker-compose ps command should run inside 
-# the directory where the docker-compose.yml exist
-# Otherwise get the ERROR
-S😎MESH~[visit-counts (master)]-$ ** docker-compose ps **
+## Check the container status running with docker-compose 
+#### Make sure docker-compose ps command should run inside 
+#### the directory where the docker-compose.yml exist
+#### Otherwise get the ERROR
+S😎MESH~[visit-counts (master)]-$ **docker-compose ps**
 ```
            Name                          Command               State           Ports
 ---------------------------------------------------------------------------------------------
@@ -125,8 +133,8 @@ visit-counts_node-app_1       docker-entrypoint.sh npm start   Up      0.0.0.0:4
 visit-counts_redis-server_1   docker-entrypoint.sh redis ...   Up      6379/tcp
 ```
 
-# Try the same command outside the directory
-S😎MESH~[visit-counts (master)]-$ ** cd .. **
+## Try the same command outside the directory
+S😎MESH~[visit-counts (master)]-$ **cd ..**
 ```
 S😎MESH~[4-Visitor-Count-App-using-Docker-Compose (master)]-$ docker-compose ps
 ERROR:
