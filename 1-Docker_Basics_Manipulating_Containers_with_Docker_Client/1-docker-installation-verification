@@ -1,5 +1,4 @@
-S😎MESH~[Docker (master)]-$ **docker run hello-world**
-```
+S😎MESH~[Docker (master)]-$ docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -20,4 +19,4 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
-```
+ 
