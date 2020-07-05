@@ -1,4 +1,4 @@
-# Dockerfile to take alpine image and run the redis server
+# Dockerfile to run the redis server from the alpine image
 
 ## Basic Dockerfile to create the redis server image
 S😎MESH~[redis-image (master)]-$ **cat Dockerfile**
