@@ -82,7 +82,7 @@ Step 8/8 : COPY --from=builder /app/build /usr/share/nginx/html
 Successfully built a5d974c5df47
 ```
 
-## Run the container with port forwarding**
+## Run the container with port forwarding
 S😎MESH~[frontend (master)]-$ **docker run -p 8080:80 a5d974c5df47**
 ```
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
