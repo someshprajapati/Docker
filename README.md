@@ -1,4 +1,5 @@
-# Learning Docker and Docker Compose, Putting my Experimental Stuff here
+# Learning Docker and Docker Compose
+### Putting my Experimental Stuff here
    
 ## I am learning Docker from scratch which includes the below:
 
@@ -12,14 +13,14 @@
 8. Work on multiple images with Docker compose.
 
 
-## Step by step sections
+## Step by Step Sections:
 
-- 1-Docker_Basics_Manipulating_Containers_with_Docker_Client
-- 2-Building_Custom_Images_using_Docker_Server
-- 3-Create_Real_Projects_with_Docker
-- 4-Visitor_Count_App_using_Docker_Compose
-- 5-Production_Grade_Workflow
-- 6-Implement_Multi-Step_Builds
-- 7-Continuous_Integration_with_Travis
-- 8-Building_Multi-Container_Application
-- 9-Building_Multi-Container_Application_Production
+- 1-Docker Basics Manipulating Containers with Docker Client
+- 2-Building Custom Images using Docker Server
+- 3-Create Real Projects with Docker
+- 4-Visitor Count App using Docker Compose
+- 5-Production Grade Workflow
+- 6-Implement Multi Step Builds
+- 7-Continuous Integration with Travis
+- 8-Building Multi Container Application
+- 9-Building Multi Container Application Production
